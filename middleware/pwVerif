@@ -1,9 +1,0 @@
-const pwModel = require('../models/password');
-
-module.exports = (req, res, next) => {
-    if (!pwModel.validate(req.body.password)) {
-        res.status(400).json({ message: 'Password entre 9 et 18 caractères contenant au moins une majuscule, une minuscule et un chiffre.' });
-    } else {
-        next();
-    }
-};
